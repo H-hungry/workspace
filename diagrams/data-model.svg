@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="data-model-title data-model-desc">
+      <title id="data-model-title">工作台数据模型（ER）</title>
+      <desc id="data-model-desc">ER 图展示六个实体：成员、任务、回执、产出物、共识与日志的关系，任务为汇聚根，依据共识产生，产出带版本，回执指向原任务。</desc>
+
+      <rect width="100%" height="100%" fill="#f5f5f5"/>
+
+      <!-- ===== 关系线先画 ===== -->
+      <!-- R1 MEMBER—TASK -->
+      <path d="M300,120 L380,120" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="308" y="112" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="362" y="112" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="306" y="96" width="68" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="340" y="106" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">发起/接收</text>
+
+      <!-- R2 TASK—RECEIPT -->
+      <path d="M620,120 L700,120" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="628" y="112" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="682" y="112" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="634" y="96" width="52" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="660" y="106" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">收回执</text>
+
+      <!-- R3 MEMBER—RECEIPT 顶部绕行 -->
+      <path d="M180,80 L180,52 Q180,40 192,40 L808,40 Q820,40 820,52 L820,80" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="188" y="72" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="804" y="72" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="452" y="16" width="96" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="500" y="26" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">发出 / 接收回执</text>
+
+      <!-- R4 TASK—DELIVERABLE -->
+      <path d="M500,180 L500,400" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="508" y="196" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="508" y="388" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="510" y="284" width="84" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="514" y="294" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.04em">产出 v1~vN</text>
+
+      <!-- R5 CONSENSUS—TASK -->
+      <path d="M180,420 L180,232 Q180,220 192,220 L428,220 Q440,220 440,232 L440,180" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="188" y="412" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="446" y="200" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="290" y="208" width="44" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="312" y="218" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">依据</text>
+
+      <!-- R6 CONSENSUS—DELIVERABLE -->
+      <path d="M300,470 L380,470" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="308" y="462" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="362" y="462" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="314" y="446" width="44" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="336" y="456" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">依据</text>
+
+      <!-- R7 MEMBER—LOG_ENTRY 底部绕行 -->
+      <path d="M120,200 L120,608 Q120,620 132,620 L748,620 Q760,620 760,608 L760,520" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="128" y="212" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="740" y="544" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="372" y="596" width="68" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="406" y="606" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">动作登记</text>
+
+      <!-- R8 MEMBER—DELIVERABLE（跨 R5 处用桥弧） -->
+      <path d="M300,176 L340,176 Q352,176 352,188 L352,212 A8,8 0 0 0 352,228 L352,496 Q352,508 364,508 L380,508" stroke="#4f5d75" stroke-width="1.2" fill="none"/>
+      <text x="306" y="168" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">1</text>
+      <text x="360" y="500" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace">N</text>
+      <rect x="316" y="152" width="76" height="12" rx="2" fill="#f5f5f5"/>
+      <text x="354" y="162" fill="#7a8399" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.04em">拥有并审核</text>
+
+      <!-- ===== 实体后画 ===== -->
+      <!-- MEMBER -->
+      <rect x="60" y="80" width="240" height="120" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+      <line x1="60" y1="112" x2="300" y2="112" stroke="rgba(45,49,66,0.12)" stroke-width="0.8"/>
+      <rect x="68" y="88" width="52" height="14" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+      <text x="94" y="98" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">MEMBER</text>
+      <text x="272" y="99" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">成员</text>
+      <text x="72" y="132" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># member_id · A|B</text>
+      <text x="72" y="152" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">github_account</text>
+      <text x="72" y="172" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">role · 职责边界</text>
+
+      <!-- TASK（焦点） -->
+      <rect x="380" y="60" width="240" height="120" rx="6" fill="rgba(235,108,54,0.06)" stroke="#eb6c36" stroke-width="1"/>
+      <line x1="380" y1="92" x2="620" y2="92" stroke="rgba(235,108,54,0.25)" stroke-width="0.8"/>
+      <rect x="388" y="68" width="52" height="14" rx="2" fill="transparent" stroke="rgba(235,108,54,0.50)" stroke-width="0.8"/>
+      <text x="414" y="78" fill="#eb6c36" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">TASK</text>
+      <text x="592" y="79" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">任务</text>
+      <text x="392" y="112" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># YYYYMMDD-任务名.md</text>
+      <text x="392" y="132" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">status pending→done</text>
+      <text x="392" y="152" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">priority high|normal</text>
+
+      <!-- RECEIPT -->
+      <rect x="700" y="80" width="240" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+      <line x1="700" y1="112" x2="940" y2="112" stroke="rgba(45,49,66,0.12)" stroke-width="0.8"/>
+      <rect x="708" y="88" width="52" height="14" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+      <text x="734" y="98" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">RECEIPT</text>
+      <text x="912" y="99" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">回执</text>
+      <text x="712" y="132" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># YYYYMMDD-re-任务名.md</text>
+      <text x="712" y="152" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">→ 上游指向原任务</text>
+
+      <!-- CONSENSUS -->
+      <rect x="60" y="420" width="240" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+      <line x1="60" y1="452" x2="300" y2="452" stroke="rgba(45,49,66,0.12)" stroke-width="0.8"/>
+      <rect x="68" y="428" width="52" height="14" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+      <text x="94" y="438" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">CONSENSUS</text>
+      <text x="272" y="439" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">共识</text>
+      <text x="72" y="472" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># NNN-主题.md 编号不复用</text>
+      <text x="72" y="492" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">§5 决策沉淀 追加式</text>
+
+      <!-- DELIVERABLE -->
+      <rect x="380" y="400" width="240" height="140" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+      <line x1="380" y1="432" x2="620" y2="432" stroke="rgba(45,49,66,0.12)" stroke-width="0.8"/>
+      <rect x="388" y="408" width="52" height="14" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+      <text x="414" y="418" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">DELIVERABLE</text>
+      <text x="592" y="419" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">产出物</text>
+      <text x="392" y="452" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># 任务名-vN.md 版本属产出</text>
+      <text x="392" y="472" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">location drafts|deliver|archive</text>
+      <text x="392" y="492" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">status 草稿|生效唯一|归档</text>
+      <text x="392" y="512" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">→ 上游指向来源任务</text>
+
+      <!-- LOG_ENTRY -->
+      <rect x="700" y="420" width="240" height="100" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+      <line x1="700" y1="452" x2="940" y2="452" stroke="rgba(45,49,66,0.12)" stroke-width="0.8"/>
+      <rect x="708" y="428" width="52" height="14" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
+      <text x="734" y="438" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">LOG</text>
+      <text x="912" y="439" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">协作日志</text>
+      <text x="712" y="472" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># date + actor</text>
+      <text x="712" y="492" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">只追加 · 禁改历史</text>
+
+      <!-- 图例 -->
+      <line x1="60" y1="668" x2="940" y2="668" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+      <text x="60" y="692" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.14em">LEGEND</text>
+      <text x="160" y="692" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace"># 主键 · → 上游引用 · 1/N 基数 · 橙色 = 汇聚根（任务的生灭贯穿整个流程）</text>
+    </svg>

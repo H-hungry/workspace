@@ -15,16 +15,27 @@
 | `members/A/` | A 的成员区：`inbox/`（收件箱）、`drafts/`（草稿）、`deliverables/`（生效产出）、`archive/`（归档）、`workspace.md`（分步进度） |
 | `members/B/` | B 的成员区（与 A 完全同构） |
 | `logs/collaboration-log.md` | 全局协作日志（追加式，禁止修改历史条目） |
-| `diagrams/` | 机制图解（4 张自包含 HTML，浏览器直接打开） |
+| `diagrams/` | 机制图解（4 组 SVG + HTML 源文件） |
 
-## 机制图解索引
+## 机制图解
 
-| 图 | 回答的问题 | 对应规则 |
-|---|---|---|
-| `diagrams/sys-scope.html` | 仓库/成员区/inbox 的权限范围 | 契约 §1、§5 |
-| `diagrams/biz-flow.html` | 一次任务从投递到闭环的流转与两个人工裁决点 | 契约 §4、§8、§11 |
-| `diagrams/collab-seq.html` | 第一轮协作（C1~C8）的逐步实录与 commit 链 | `logs/collaboration-log.md` 前六条 |
-| `diagrams/data-model.html` | 任务/回执/产出/共识等实体的关系模型 | 契约 §2、§4 + 共识 §5 |
+### 图一 · 区域与权限范围（对应契约 §1、§5）
+
+![区域与权限范围](diagrams/sys-scope.svg)
+
+### 图二 · 一次任务的业务流程（对应契约 §4、§8、§11）
+
+![业务流程](diagrams/biz-flow.svg)
+
+### 图三 · 第一轮协作时序 C1~C8（对应协作日志前六条）
+
+![协作时序](diagrams/collab-seq.svg)
+
+### 图四 · 数据模型 ER（对应契约 §2、§4 + 共识 §5）
+
+![数据模型](diagrams/data-model.svg)
+
+> 交互版（网页排版）见 `diagrams/*.html`，浏览器打开效果更佳。
 
 ## AI 冷启动指引
 
