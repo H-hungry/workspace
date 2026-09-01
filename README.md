@@ -10,6 +10,7 @@
 
 | 路径 | 用途 |
 |---|---|
+| `agent.md` | AI 协作代理入口指引（任何 AI 进入仓库先读此文件） |
 | `commons/contract.md` | 协作契约（规则总纲，最高优先级） |
 | `commons/consensus/` | 共识文件（项目背景、目标、职责边界、决策沉淀） |
 | `members/A/` | A 的成员区：`inbox/`（收件箱）、`drafts/`（草稿）、`deliverables/`（生效产出）、`archive/`（归档）、`workspace.md`（分步进度） |
