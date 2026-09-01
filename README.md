@@ -15,6 +15,16 @@
 | `members/A/` | A 的成员区：`inbox/`（收件箱）、`drafts/`（草稿）、`deliverables/`（生效产出）、`archive/`（归档）、`workspace.md`（分步进度） |
 | `members/B/` | B 的成员区（与 A 完全同构） |
 | `logs/collaboration-log.md` | 全局协作日志（追加式，禁止修改历史条目） |
+| `diagrams/` | 机制图解（4 张自包含 HTML，浏览器直接打开） |
+
+## 机制图解索引
+
+| 图 | 回答的问题 | 对应规则 |
+|---|---|---|
+| `diagrams/sys-scope.html` | 仓库/成员区/inbox 的权限范围 | 契约 §1、§5 |
+| `diagrams/biz-flow.html` | 一次任务从投递到闭环的流转与两个人工裁决点 | 契约 §4、§8、§11 |
+| `diagrams/collab-seq.html` | 第一轮协作（C1~C8）的逐步实录与 commit 链 | `logs/collaboration-log.md` 前六条 |
+| `diagrams/data-model.html` | 任务/回执/产出/共识等实体的关系模型 | 契约 §2、§4 + 共识 §5 |
 
 ## AI 冷启动指引
 
